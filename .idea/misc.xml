@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/HP/AndroidStudioProjects/MyWeatherApp/app/src/main/res/drawable/home_bg.xml" value="0.1" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/MyWeatherApp/app/src/main/res/drawable/home_end_bg.xml" value="0.176" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/MyWeatherApp/app/src/main/res/drawable/ic_logo.xml" value="0.177" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/MyWeatherApp/app/src/main/res/drawable/rectangle.xml" value="0.1855" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/MyWeatherApp/app/src/main/res/drawable/rectangle_day_bg.xml" value="0.1" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/MyWeatherApp/app/src/main/res/drawable/recyler_city_list.xml" value="0.1" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/MyWeatherApp/app/src/main/res/drawable/recyler_clock_bg.xml" value="0.1" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/MyWeatherApp/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/MyWeatherApp/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/MyWeatherApp/app/src/main/res/layout/fragment_home_second_screen.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/MyWeatherApp/app/src/main/res/layout/fragment_second_screen_h.xml" value="0.1962962962962963" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/MyWeatherApp/app/src/main/res/layout/recyler_city_list.xml" value="0.1" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/MyWeatherApp/app/src/main/res/layout/recyler_clock_row.xml" value="0.1" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/MyWeatherApp/app/src/main/res/layout/recyler_day_row.xml" value="0.536" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

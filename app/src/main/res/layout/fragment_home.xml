@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.izelhatipoglu.myweatherapp.ui.home.viewModel.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/home_bg"
+        tools:context=".ui.home.HomeFragment">
+
+        <ImageView
+            android:id ="@+id/logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/logo_small"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="40dp"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_settings_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="50dp"/>
+
+        <TextView
+            android:id="@+id/text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Good Morning, Izel"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logo"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="40dp"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id ="@+id/card_view"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:cardCornerRadius="65dp"
+            app:layout_constraintTop_toBottomOf="@id/text_view"
+            android:layout_margin="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rectangle">
+
+                <ImageView
+                    android:id="@+id/symbol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:src="@drawable/cloud"
+                    app:layout_constraintTop_toTopOf="@id/number"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="50dp" />
+                <ImageView
+                    android:id="@+id/degree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:src="@drawable/degree"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/number"
+                    android:layout_marginTop="20dp" />
+
+                <TextView
+                    android:id="@+id/number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:text="23"
+                    android:textSize="75sp"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Mostly Cloudy"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="80dp"
+                    app:layout_constraintTop_toTopOf="@id/symbol"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="İstanbul"
+                    android:textSize="23sp"
+                    android:textColor="@color/white"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="Sunday 2 May"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/city" />
+
+                <TextView
+                    android:id="@+id/clock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="PM 2"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginTop="7dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/date"
+                    />
+
+                <ImageView
+                    android:id="@+id/weather_symbol"
+                    android:layout_width="30dp"
+                    android:src="@drawable/sun_block"
+                    android:layout_height="30dp"
+                    app:layout_constraintEnd_toStartOf="@id/clock"
+                    app:layout_constraintTop_toBottomOf="@id/date"
+                    android:layout_marginEnd="10dp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/effect"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:src="@drawable/effect"
+            android:paddingHorizontal="14dp"
+            app:layout_constraintTop_toBottomOf="@id/card_view"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.google.android.material.card.MaterialCardView
+            app:cardBackgroundColor="@android:color/transparent"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="35dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/effect"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                app:cardBackgroundColor="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/home_end_bg">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyler_view_clock"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    tools:listitem="@layout/recyler_clock_row"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    tools:listitem="@layout/recyler_day_row"
+                    android:id="@+id/recyler_view_day"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="30dp"
+                    />
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dot"
+            app:dotsColor="@color/grey"
+            app:selectedDotColor="@color/white"
+            app:dotsSize="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="10dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
