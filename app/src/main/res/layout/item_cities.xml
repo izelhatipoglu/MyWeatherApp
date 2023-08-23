@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.izelhatipoglu.myweatherapp.ui.setting.adapter.FavouritesCitiesAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_margin="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            app:layout_constraintDimensionRatio="W,1.0:1.0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/fl_root"
+                    android:background="@drawable/recyler_cities_bg">
+
+                    <TextView
+                        android:id="@+id/city_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:paddingHorizontal="2dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        tools:text="İstanbul"
+                        android:ellipsize="marquee"
+                        android:singleLine="true"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:focusable="true"
+                        android:clickable="true"
+                        android:focusableInTouchMode="true"
+                        android:scrollHorizontally="true"
+                        app:layout_constraintTop_toBottomOf="@id/iv_delete"
+                        android:textColor="@color/white"
+                        android:textSize="17sp" />
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/minus"
+                    android:gravity="center"
+                    android:id="@+id/iv_delete"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
