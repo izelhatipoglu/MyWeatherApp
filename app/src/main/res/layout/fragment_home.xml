@@ -17,40 +17,56 @@
 
         <ImageView
             android:id ="@+id/logo"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:src="@drawable/logo_small"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="40dp"/>
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"/>
+
         <ImageView
+            android:id="@+id/location_iv"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:src="@drawable/baseline_add_location_24"
+            app:layout_constraintEnd_toStartOf="@id/setting_iv"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="@{() ->viewModel.goLocation()}"
+            android:layout_marginTop="40dp"
+            android:layout_marginHorizontal="10dp"/>
+
+        <ImageView
+            android:id="@+id/setting_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:onClick="@{() -> viewModel.goSettings()}"
             android:src="@drawable/ic_baseline_settings_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_margin="50dp"/>
+            android:layout_margin="40dp"/>
 
         <TextView
             android:id="@+id/text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Good Morning, Izel"
-            android:textSize="24sp"
+            android:text="@string/home_tv"
+            android:textSize="20sp"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/logo"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="40dp"/>
 
         <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:orientation="horizontal"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="1dp"/>
+            app:layout_constraintTop_toBottomOf="@id/text_view"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <com.google.android.material.card.MaterialCardView
+  <!--      <com.google.android.material.card.MaterialCardView
             android:id ="@+id/card_view"
             app:cardBackgroundColor="@android:color/transparent"
             android:layout_width="match_parent"
@@ -189,6 +205,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/recyler_clock_row"
                     app:layout_constraintTop_toTopOf="parent"
                     android:layout_marginStart="20dp"
@@ -199,6 +216,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/recyler_day_row"
                     android:id="@+id/recyler_view_day"
                     app:layout_constraintTop_toTopOf="parent"
@@ -209,8 +227,6 @@
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
-
-
 
         <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
             android:layout_width="wrap_content"
@@ -223,7 +239,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="10dp"/>
-
+-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

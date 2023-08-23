@@ -6,5 +6,7 @@ data class ForecastMainResponseModel(
     @SerializedName("location")
     val location : ForecastResponseModel,
     @SerializedName("current")
-    val current: ForecastCurrentResponseModel
+    val current: ForecastCurrentResponseModel,
+    @SerializedName("forecast")
+    val forecast: ForecastDayResponseModel
 )

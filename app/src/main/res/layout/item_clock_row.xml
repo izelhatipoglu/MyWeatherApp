@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="model"
+            type="com.izelhatipoglu.myweatherapp.model.clock.ClockResponseModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_clock"
+        android:layout_width="70dp"
+        android:layout_height="120dp"
+        android:layout_marginHorizontal="5dp"
+        android:elevation="4dp"
+        android:translationZ="5dp"
+        android:background="@drawable/recyler_clock_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/clock_tv"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:text="@{model.time.substring(model.time.indexOf(' ') + 1)}"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/weather_iv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="7dp"
+            app:setImageWithUrl="@{model.condition.icon}"/>
+
+        <TextView
+            android:id="@+id/degree_tv"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            android:foregroundGravity="center_vertical"
+            android:gravity="center"
+            android:text="@{String.valueOf(model.tempC)}"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+</layout>

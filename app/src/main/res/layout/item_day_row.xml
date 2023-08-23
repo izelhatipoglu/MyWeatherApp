@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.izelhatipoglu.myweatherapp.model.forecastResponse.ForecastDayDetailResponseModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ll_day"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/rectangle_day_bg">
+
+        <TextView
+            android:id="@+id/day_tv"
+            android:layout_width="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="25dp"
+            tools:text="23.03.2023"
+            android:layout_marginStart="25dp"
+            android:text="@{model.date}"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/weather_iv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintTop_toTopOf="@id/day_tv"
+            app:layout_constraintBottom_toBottomOf="@id/day_tv"
+            app:layout_constraintStart_toEndOf="@id/day_tv"
+            android:layout_marginStart="15dp"
+            setImageWithUrl="@{model.day.condition.icon}"/>
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            app:layout_constraintTop_toTopOf="@id/day_tv"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:focusable="true"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            android:scrollHorizontally="true"
+            android:layout_marginStart="15dp"
+            app:layout_constraintBottom_toBottomOf="@id/day_tv"
+            app:layout_constraintStart_toEndOf="@id/weather_iv"
+            app:layout_constraintEnd_toStartOf="@id/degree_tv"
+            android:text="@{model.day.condition.text}"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_marginEnd="15dp"/>
+
+        <TextView
+            android:id="@+id/degree_tv"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/day_tv"
+            app:layout_constraintBottom_toBottomOf="@id/day_tv"
+            android:text="@{String.valueOf(model.day.avgtemp_c)}"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_marginEnd="25dp"
+            tools:text="12.3"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
