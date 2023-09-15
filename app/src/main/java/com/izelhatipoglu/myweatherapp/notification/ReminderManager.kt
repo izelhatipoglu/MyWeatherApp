@@ -15,7 +15,7 @@ object ReminderManager {
 
     fun startReminder(
         context: Context,
-        reminderTime: String = "08:31",
+        reminderTime: String = "10:00",
         reminderId: Int = REMINDER_NOTIFICATION_REQUEST_CODE,
     ) {
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager

@@ -32,8 +32,7 @@ class SettingFragment : BaseFragmentVM<FragmentSettingBinding, SettingViewModel>
 
     override fun initUI() {
 
-        binding.timePicker.setIs24HourView(true)
-        saveTimeToSharedPref()
+
 
         viewModel.getAllCitiesWeatherData()
         val layoutManager =
@@ -72,37 +71,6 @@ class SettingFragment : BaseFragmentVM<FragmentSettingBinding, SettingViewModel>
 
     }
 
-    private fun saveTimeToSharedPref() {
-        binding.timePicker.setOnTimeChangedListener { _, hour, minute ->
-            var hour = hour
-            var am_pm = ""
-            // AM_PM decider logic
-            when {
-                hour == 0 -> {
-                    hour += 12
-                    am_pm = "AM"
-                }
-
-                hour == 12 -> am_pm = "PM"
-                hour > 12 -> {
-                    hour -= 12
-                    am_pm = "PM"
-                }
-
-                else -> am_pm = "AM"
-            }
-            val hour2 = if (hour < 10) "0" + hour else hour
-            val min = if (minute < 10) "0" + minute else minute
-            // display format of time
-            println("Time is: $hour2:$min $am_pm")
-
-            sharedPreference = requireContext().getSharedPreferences("com.izelhatipoglu.myweatherapp", Context.MODE_PRIVATE)
-            editor = sharedPreference.edit()
-            editor.putString("time","$hour2:$min")
-            editor.apply()
-            println("kayıt edildi")
-        }
-    }
 
     private fun goToAddNewLocation() {
         val action = SettingFragmentDirections.actionSettingFragmentToChooseLocationFragment()

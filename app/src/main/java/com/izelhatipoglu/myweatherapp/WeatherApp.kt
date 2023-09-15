@@ -20,6 +20,7 @@ class WeatherApp : Application() {
         createNotificationsChannels()
         ReminderManager.startReminder(this)
 
+        getTime()
     }
 
     private fun createNotificationsChannels(){
@@ -36,6 +37,6 @@ class WeatherApp : Application() {
 
     fun getTime() :String {
         sharedPreference = applicationContext.getSharedPreferences("com.izelhatipoglu.myweatherapp", Context.MODE_PRIVATE)
-        return  sharedPreference.getString("time","07:56").toString()
+        return println("Shared preferences ${sharedPreference.getString("time","")}").toString()
     }
 }
